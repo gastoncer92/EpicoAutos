@@ -1,4 +1,5 @@
 from PyQt5 import QtWidgets
+from PyQt5.QtGui import QIntValidator, QDoubleValidator
 from PyQt5.QtWidgets import QApplication
 from ui_main import Ui_MainWindow
 from base import *
@@ -62,9 +63,14 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_18.setDisabled (True)
         self.pushButton_19.clicked.connect (self.deshacer)
         self.pushButton.clicked.connect (self.verVentas)
-        self.pushButton_10.setDisabled(True)
+        self.pushButton_10.setDisabled (True)
         self.pushButton_13.setDisabled (True)
         self.pushButton_16.setDisabled (True)
+        #self.lineEdit_41.setValidator(QIntValidator(1,999))
+        #self.stop_loss_price_input.setValidator (QDoubleValidator (999999, -999999, 8))
+        self.lineEdit_41.setValidator(QDoubleValidator(999999, -999999, 8))
+
+        # self.lineEdit_41.setValidator()
 
     def verVentas (self):
         ventas.showMaximized ()
@@ -489,6 +495,8 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         marca = self.comboBox.currentText ()
         modelo = self.comboBox_4.currentText ()
         precio = self.lineEdit_41.text ()
+        print(precio)
+        print (type(precio))
         condicion = self.comboBox_2.currentText ()
         datoAuto = [idAut, marca, modelo, precio, condicion]
         if marca.strip () == '' or modelo.strip () == '' or precio.strip () == '':
@@ -529,9 +537,9 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_60.setText (dato[0][2])  # modelo
             self.lineEdit_43.setText (dato[0][3])  # precio
             self.label_61.setText (dato[0][4])  # condicion
-            self.pushButton_16.setEnabled(True)
-            if self.lineEdit_43.text().strip()=='':
-                self.pushButton_17.setDisabled(True)
+            self.pushButton_16.setEnabled (True)
+            if self.lineEdit_43.text ().strip () == '':
+                self.pushButton_17.setDisabled (True)
 
         except IndexError:
             print ("fuera de rango")
@@ -553,7 +561,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         self.label_61.setText ('')
         self.lineEdit_43.setText ('')
         self.actualizarAuto ()
-        if self.lineEdit_43.text()=='':
+        if self.lineEdit_43.text () == '':
             self.pushButton_16.setDisabled (True)
 
     def actualizarAuto (self):
@@ -618,15 +626,15 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         try:
             dato = Buscar_empleado (conn, idBuscarEmpleado)
             conn.close ()
-            #indice = int (idBuscarEmpleado) - 1
+            # indice = int (idBuscarEmpleado) - 1
             self.lineEdit_32.setText (dato[0][1])
             self.lineEdit_33.setText (dato[0][2])
             self.lineEdit_34.setText (dato[0][3])
             self.lineEdit_35.setText (str (dato[0][4]))
-            if type(dato[0][1])==str or type(dato[0][2])==str or type(dato[0][3])==str:
-                self.pushButton_13.setEnabled(True)
-            if self.lineEdit_19.text().strip()=='':
-                self.pushButton_13.setDisabled(True)
+            if type (dato[0][1]) == str or type (dato[0][2]) == str or type (dato[0][3]) == str:
+                self.pushButton_13.setEnabled (True)
+            if self.lineEdit_19.text ().strip () == '':
+                self.pushButton_13.setDisabled (True)
 
             # print(dato[0][4])
         except IndexError:
@@ -648,8 +656,8 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         self.lineEdit_35.setText ('')
         self.lineEdit_19.setText ('')
         self.actualizarEmpleado ()
-        if self.lineEdit_32.text()=='':
-            self.pushButton_13.setDisabled(True)
+        if self.lineEdit_32.text () == '':
+            self.pushButton_13.setDisabled (True)
 
     def actualizarEmpleado (self):
         conn = sqlite3.connect ('base.db')
@@ -711,14 +719,14 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         try:
             dato = Buscar_cliente (conn, idBuscarCliente)
             conn.close ()
-            #indice = int (idBuscarCliente) - 1
+            # indice = int (idBuscarCliente) - 1
             self.lineEdit_26.setText (dato[0][1])
             self.lineEdit_27.setText (dato[0][2])
             self.lineEdit_28.setText (dato[0][3])
-            if self.lineEdit_26.text().strip()=='':
-                self.pushButton_10.setDisabled(True)
-            elif type(self.lineEdit_26.text())==str:
-                self.pushButton_10.setEnabled(True)
+            if self.lineEdit_26.text ().strip () == '':
+                self.pushButton_10.setDisabled (True)
+            elif type (self.lineEdit_26.text ()) == str:
+                self.pushButton_10.setEnabled (True)
         except IndexError:
             print ("fuera de rango")
 
@@ -736,7 +744,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         self.lineEdit_27.setText ('')
         self.lineEdit_28.setText ('')
         self.actualizarCliente ()
-        if self.lineEdit_26.text()=='':
+        if self.lineEdit_26.text () == '':
             self.pushButton_10.setDisabled (True)
 
     def actualizarCliente (self):

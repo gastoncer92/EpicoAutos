@@ -1,7 +1,18 @@
-def insertar_base_auto(conn,dato):
-    cursor = conn.cursor()
-    cursor.execute("INSERT INTO db_auto(id_auto,marca,modelo,precio,condicion) VALUES (?,?,?,?,?)",dato)
-    conn.commit()
+
+
+
+
+def insertar_base_auto(conn,d):
+
+    try:
+        cursor = conn.cursor()
+        datoNuevo=[d[0],d[1],d[2],"$%.2f"%float(list(d).pop(3)),d[4]]
+        cursor.execute("INSERT INTO db_auto(id_auto,marca,modelo,precio,condicion) VALUES (?,?,?,?,?)",datoNuevo)
+        conn.commit()
+    except ValueError:
+        print("asd")
+
+        alerta.show()
 
 def borrar_base_auto(conn,idBorrar):
     if idBorrar != '':

@@ -1,13 +1,6 @@
 import sqlite3
 
 
-# def extraer_cantidad_empleados():
-#    conn = sqlite3.connect('base.db')
-#    cursor = conn.cursor()
-#    cursor.execute("SELECT COUNT(id_cliente) FROM db_cliente")
-#    resultado=int(list(cursor.fetchall()[len(cursor.fetchall())])[-1] + 1)
-#    return resultado
-
 def insertar_base_cliente (conn, cliente):
     cursor = conn.cursor ()
     cursor.execute ("INSERT INTO db_cliente(id_cliente,nombre,apellido,domicilio) VALUES (?,?,?,?)", cliente)

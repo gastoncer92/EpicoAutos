@@ -1,23 +1,6 @@
 import sqlite3
 
 
-# SELECT * from db_empleado;
-# SELECT ALL id_empleado FROM db_empleado
-# SELECT count(*) FROM db_empleado
-# UPDATE db_empleado SET id_empleado=id_empleado-1 WHERE id_empleado>1
-
-# def actualizar(self):
-#    conn = sqlite3.connect('base.db')
-#    consulta="SELECT * from db_empleado"
-#    cursor=conn.cursor()
-#    resultado=cursor.execute(consulta)
-#    #self.tableWidget_empleado.setRowCount(0)
-#    for row_number, row_data in enumerate(resultado):
-#        self.tableWidget.insertRow(row_number)
-#        for column_number, data in enumerate(row_data):
-#            self.tableWidget.setItem(row_number, column_number,QtWidgets.QTableWidgetItem(str(data)))
-#    conn.close()
-#    print("hakuna matata!")
 def extraer_cantidad_empleados ():
     conn = sqlite3.connect ('base.db')
     cursor = conn.cursor ()
@@ -26,10 +9,11 @@ def extraer_cantidad_empleados ():
     return resultado
 
 
-def insertar_base_empleado (conn, empleado):
+def insertar_base_empleado (conn, d):
+    datoNuevo = [d[0], d[1], d[2], d[4],"$%.2f" % float (list (d).pop (4))]
     cursor = conn.cursor ()
     cursor.execute ("INSERT INTO db_empleado(id_empleado,nombre,apellido,domicilio,sueldo) VALUES (?,?,?,?,?)",
-                    empleado)
+                    datoNuevo)
     conn.commit ()
 
 
