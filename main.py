@@ -7,7 +7,9 @@ from base_consulta_cliente import *
 from base_consulta_auto import *
 from ui_ventas import *
 from ventanaVentas import *
-#terminado
+
+
+# terminado
 
 class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__ (self, *args):
@@ -56,17 +58,17 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         self.comboBox_3.addItems (['', '12', '24', '36', '48', '60', '72', '84', '96'])
         self.comboBox_3.currentIndexChanged.connect (self.agregarPeriodo)
         self.pushButton_20.clicked.connect (self.calcular)
-
         self.pushButton_18.clicked.connect (self.registro)
-
         self.pushButton_18.setDisabled (True)
-
         self.pushButton_19.clicked.connect (self.deshacer)
-
         self.pushButton.clicked.connect (self.verVentas)
+        self.pushButton_10.setDisabled(True)
+        self.pushButton_13.setDisabled (True)
+        self.pushButton_16.setDisabled (True)
 
     def verVentas (self):
         ventas.showMaximized ()
+
     def deshacer (self):
         self.pushButton_18.setDisabled (True)
         self.spinBox.setValue (0)
@@ -156,6 +158,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
 
         else:
             pass
+
     def calcular (self):
         try:
             pie = float (self.lineEdit_29.text ())
@@ -192,6 +195,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_29.setText ('')
         except TypeError:
             print ("error linea 145")
+
     def agregarPeriodo (self):
         periodo = self.comboBox_3.currentText ()
         # anual = int (periodo) / 12
@@ -200,12 +204,14 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_2.setText ("Periodos: %s meses (%d años)" % (periodo, anual))
         except ValueError:
             print ("asd")
+
     def agregarTIA (self):
         tia = self.spinBox_4.text ()
         try:
             self.label_4.setText ("Tasa Interés Anual:  %s%%" % tia)
         except ValueError:
             self.label_4.setText ("Tasa Interés Anual: 0%%")
+
     def agregarPIE (self):
         pie = self.lineEdit_29.text ()
         try:
@@ -222,8 +228,10 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_6.setText ("PIE: $ 0")
         except TypeError:
             print ("a")
+
     def agregarFinanciado (self):
         pass
+
     def agregarContado (self):
         contado = self.lineEdit_12.text ()
         try:
@@ -242,6 +250,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
             self.spinBox_4.setDisabled (True)
             self.spinBox_5.setDisabled (True)
             self.lineEdit_9.setText ('')
+
     def cargarContado (self):
         if self.checkBox.isChecked ():
             self.lineEdit_12.setEnabled (True)
@@ -264,6 +273,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
                 valores[0], valores[1]))
         except TypeError:
             self.label_64.setText ("Cliente: --")
+
     def PonerInfoEmpleado (self):
         idInfoEmpleado = self.spinBox_2.text ()
         conn = conexion ()
@@ -277,6 +287,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
                 valores[0], valores[1]))
         except TypeError:
             self.label_63.setText ("Empleado: --")
+
     def PonerInfoAuto (self):
         idInfoAuto = self.spinBox.text ()
         conn = conexion ()
@@ -311,6 +322,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
             conn.close ()
         else:
             pass
+
     def buscarEmpleadoAgregar (self):
         nombre = self.lineEdit_nombre_emp.text ().strip ()
         apellido = self.lineEdit_apellido_emp.text ().strip ()
@@ -336,13 +348,16 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
                          "AUDI", "ASTON MARTIN", "BENTLEY",
                          "CITROEN", "DACIA", 'DFSK', 'DS',
                          'FERRARI', 'FIAT', 'FORD', 'HONDA',
-                         'HYUNDAI', 'INFINITI','ISUZU',
+                         'HYUNDAI', 'INFINITI', 'ISUZU',
                          'JAGUAR', 'KIA', 'LAMBORGHINI',
                          'MASERATI', 'MERCEDES']
         self.comboBox.addItems (sorted (listaDeCoches))
         condicion = ['', 'Nuevo', 'Usado']
         self.comboBox_2.addItems (condicion)
+
     def elegirAuto (self):
+        # if self.comboBox.setCurrentIndex(0)=='':
+        # self.comboBox_4.setCurrentIndex(0)
         marca = self.comboBox.currentText ()
 
         modelosABARTH = ['500C', '500', '124 Spider']
@@ -487,6 +502,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
             self.comboBox.setCurrentIndex (0)
             self.comboBox_4.setCurrentIndex (0)
             self.comboBox_2.setCurrentIndex (0)
+
     def borrarAuto (self):
         conn = conexion ()
         idBorrar = self.lineEdit_15.text ().lstrip ()
@@ -498,19 +514,32 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             print ("NO se borra NADA de nada! nadita")
         self.lineEdit_15.setText ("")
+
     def buscarAuto (self):
         idBuscarAuto = self.lineEdit_18.text ().lstrip ()
+        if idBuscarAuto == '':
+            idBuscarAuto = '0'
         conn = conexion ()
         try:
             dato = Buscar_auto (conn, idBuscarAuto)
             conn.close ()
-            indice = int (idBuscarAuto) - 1
-            self.label_59.setText (dato[indice][1])  # marca
-            self.label_60.setText (dato[indice][2])  # modelo
-            self.lineEdit_43.setText (dato[indice][3])  # precio
-            self.label_61.setText (dato[indice][4])  # condicion
+            # indice = int (idBuscarAuto) - 1
+            print ("dato", dato)
+            self.label_59.setText (dato[0][1])  # marca
+            self.label_60.setText (dato[0][2])  # modelo
+            self.lineEdit_43.setText (dato[0][3])  # precio
+            self.label_61.setText (dato[0][4])  # condicion
+            self.pushButton_16.setEnabled(True)
+            if self.lineEdit_43.text().strip()=='':
+                self.pushButton_17.setDisabled(True)
+
         except IndexError:
             print ("fuera de rango")
+            self.lineEdit_18.setText ("")
+        except ValueError:
+            print ("valor incorrecto")
+            self.lineEdit_18.setText ("")
+
     def modificarAuto (self):
         idMod = self.lineEdit_18.text ()
         precio = self.lineEdit_43.text ()
@@ -524,6 +553,9 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         self.label_61.setText ('')
         self.lineEdit_43.setText ('')
         self.actualizarAuto ()
+        if self.lineEdit_43.text()=='':
+            self.pushButton_16.setDisabled (True)
+
     def actualizarAuto (self):
         conn = sqlite3.connect ('base.db')
         consulta = "SELECT * from db_auto"
@@ -550,7 +582,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         apellido = self.lineEdit_apellido_emp.text ()
         domicilio = self.lineEdit_domicilio_emp.text ()
         sueldo = self.lineEdit_sueldo_emp.text ()
-        if nombre.strip () == '' or apellido.strip () == '' or domicilio.strip () == '' or sueldo.strip()=='':
+        if nombre.strip () == '' or apellido.strip () == '' or domicilio.strip () == '' or sueldo.strip () == '':
             pass
         else:
             datoempleado = [idCli, nombre, apellido, domicilio, sueldo]
@@ -562,6 +594,8 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_domicilio_emp.setText ("")
             self.lineEdit_sueldo_emp.setText ("")
             self.actualizarEmpleado ()
+            self.comboBox.setCurrentIndex (0)
+
     def borrarEmpleado (self):
         idBorrar = self.lineEdit_borrar_emp.text ().lstrip ()
         if not (idBorrar.isspace () or idBorrar == ''):
@@ -572,6 +606,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             print ("NO se borra NADA")
         self.lineEdit_borrar_emp.setText ("")
+
     def buscarEmpleado (self):
         self.lineEdit_32.setText ('')
         self.lineEdit_33.setText ('')
@@ -579,19 +614,24 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         self.lineEdit_35.setText ('')
 
         idBuscarEmpleado = self.lineEdit_19.text ()
-        #        print(idBuscarCliente)
         conn = conexion ()
         try:
             dato = Buscar_empleado (conn, idBuscarEmpleado)
             conn.close ()
-            indice = int (idBuscarEmpleado) - 1
-            self.lineEdit_32.setText (dato[indice][1])
-            self.lineEdit_33.setText (dato[indice][2])
-            self.lineEdit_34.setText (dato[indice][3])
+            #indice = int (idBuscarEmpleado) - 1
+            self.lineEdit_32.setText (dato[0][1])
+            self.lineEdit_33.setText (dato[0][2])
+            self.lineEdit_34.setText (dato[0][3])
             self.lineEdit_35.setText (str (dato[0][4]))
+            if type(dato[0][1])==str or type(dato[0][2])==str or type(dato[0][3])==str:
+                self.pushButton_13.setEnabled(True)
+            if self.lineEdit_19.text().strip()=='':
+                self.pushButton_13.setDisabled(True)
+
             # print(dato[0][4])
         except IndexError:
             print ("Fuera de rango")
+
     def modificarEmpleado (self):
         conn = conexion ()
         idMod = self.lineEdit_19.text ()
@@ -608,6 +648,9 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         self.lineEdit_35.setText ('')
         self.lineEdit_19.setText ('')
         self.actualizarEmpleado ()
+        if self.lineEdit_32.text()=='':
+            self.pushButton_13.setDisabled(True)
+
     def actualizarEmpleado (self):
         conn = sqlite3.connect ('base.db')
         consulta = "SELECT * from db_empleado"
@@ -646,6 +689,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_23.setText ("")
             self.lineEdit_24.setText ("")
             self.actualizarCliente ()
+
     def borrarCliente (self):
         idBorrar = self.lineEdit_14.text ().lstrip ()
         if not idBorrar.isspace () or idBorrar == '':
@@ -656,31 +700,35 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             print ("NO se borra NADA")
         self.lineEdit_14.setText ("")
+
     def buscarCliente (self):
         self.lineEdit_26.setText ('')
         self.lineEdit_27.setText ('')
         self.lineEdit_28.setText ('')
+
         idBuscarCliente = self.lineEdit_16.text ()
         conn = conexion ()
         try:
             dato = Buscar_cliente (conn, idBuscarCliente)
             conn.close ()
-            indice = int (idBuscarCliente) - 1
-            self.lineEdit_26.setText (dato[indice][1])
-            self.lineEdit_27.setText (dato[indice][2])
-            self.lineEdit_28.setText (dato[indice][3])
+            #indice = int (idBuscarCliente) - 1
+            self.lineEdit_26.setText (dato[0][1])
+            self.lineEdit_27.setText (dato[0][2])
+            self.lineEdit_28.setText (dato[0][3])
+            if self.lineEdit_26.text().strip()=='':
+                self.pushButton_10.setDisabled(True)
+            elif type(self.lineEdit_26.text())==str:
+                self.pushButton_10.setEnabled(True)
         except IndexError:
             print ("fuera de rango")
 
-        # self.lineEdit_35.setText(str(dato[0][4]))
-        # print(dato[0][4])
     def modificarCliente (self):
-        conn = conexion ()
         idMod = self.lineEdit_16.text ()
         nombre = self.lineEdit_26.text ()
         apellido = self.lineEdit_27.text ()
         domicilio = self.lineEdit_28.text ()
         dato = [nombre, apellido, domicilio]
+        conn = conexion ()
         modificar_cliente (conn, dato, idMod)
         conn.close ()
         self.lineEdit_16.setText ('')
@@ -688,6 +736,9 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         self.lineEdit_27.setText ('')
         self.lineEdit_28.setText ('')
         self.actualizarCliente ()
+        if self.lineEdit_26.text()=='':
+            self.pushButton_10.setDisabled (True)
+
     def actualizarCliente (self):
         conn = sqlite3.connect ('base.db')
         consulta = "SELECT * from db_cliente"
@@ -700,6 +751,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
                 self.tableWidget_clientes.setItem (row_number, column_number, QtWidgets.QTableWidgetItem (str (data)))
         for i in [0, 1, 2, 3]:
             self.tableWidget_clientes.resizeColumnToContents (i)
+
     def buscarClienteAgregar (self):
         nombre = self.lineEdit_25.text ().strip ()
         apellido = self.lineEdit_23.text ().strip ()
