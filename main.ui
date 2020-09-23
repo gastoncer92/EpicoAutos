@@ -102,7 +102,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>250</width>
-                <height>297</height>
+                <height>295</height>
                </rect>
               </property>
               <attribute name="label">
@@ -200,8 +200,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>131</width>
-                <height>76</height>
+                <width>250</width>
+                <height>295</height>
                </rect>
               </property>
               <attribute name="label">
@@ -243,8 +243,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>156</width>
-                <height>207</height>
+                <width>250</width>
+                <height>295</height>
                </rect>
               </property>
               <attribute name="label">
@@ -266,7 +266,7 @@
                     <string notr="true">background-color: rgb(238, 238, 236);</string>
                    </property>
                    <property name="inputMask">
-                    <string>9999</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -324,7 +324,7 @@
                     <string notr="true">background-color: rgb(238, 238, 236);</string>
                    </property>
                    <property name="inputMask">
-                    <string>9999999999</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -447,7 +447,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>250</width>
-                <height>297</height>
+                <height>295</height>
                </rect>
               </property>
               <attribute name="label">
@@ -575,8 +575,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>168</width>
-                <height>82</height>
+                <width>250</width>
+                <height>295</height>
                </rect>
               </property>
               <attribute name="label">
@@ -650,8 +650,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>156</width>
-                <height>231</height>
+                <width>250</width>
+                <height>295</height>
                </rect>
               </property>
               <attribute name="label">
@@ -673,7 +673,7 @@
                     <string notr="true">background-color: rgb(238, 238, 236);</string>
                    </property>
                    <property name="inputMask">
-                    <string>99999</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -851,7 +851,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>250</width>
-                <height>297</height>
+                <height>295</height>
                </rect>
               </property>
               <attribute name="label">
@@ -953,8 +953,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>146</width>
-                <height>76</height>
+                <width>250</width>
+                <height>295</height>
                </rect>
               </property>
               <attribute name="label">
@@ -976,7 +976,7 @@
                     <string notr="true">background-color: rgb(238, 238, 236);</string>
                    </property>
                    <property name="inputMask">
-                    <string>99999</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -999,8 +999,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>156</width>
-                <height>200</height>
+                <width>250</width>
+                <height>295</height>
                </rect>
               </property>
               <attribute name="label">
@@ -1074,7 +1074,7 @@
                     <string notr="true">background-color: rgb(238, 238, 236);</string>
                    </property>
                    <property name="inputMask">
-                    <string>99999</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>

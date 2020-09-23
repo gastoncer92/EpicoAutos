@@ -8,6 +8,7 @@ from base_consulta_cliente import *
 from base_consulta_auto import *
 from ui_ventas import *
 from ventanaVentas import *
+from ui_manual import *
 
 
 # terminado
@@ -66,11 +67,39 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_10.setDisabled (True)
         self.pushButton_13.setDisabled (True)
         self.pushButton_16.setDisabled (True)
-        #self.lineEdit_41.setValidator(QIntValidator(1,999))
-        #self.stop_loss_price_input.setValidator (QDoubleValidator (999999, -999999, 8))
-        self.lineEdit_41.setValidator(QDoubleValidator(999999, -999999, 8))
+        # self.lineEdit_41.setValidator(QIntValidator(1,999))
+        # self.stop_loss_price_input.setValidator (QDoubleValidator (999999, -999999, 8))
+        self.lineEdit_41.setValidator (QDoubleValidator (999999, -999999, 8))
+        self.lineEdit_sueldo_emp.setValidator (QDoubleValidator (999999, -999999, 8))
+        self.pushButton_21.clicked.connect (self.manual)
 
-        # self.lineEdit_41.setValidator()
+        self.lineEdit_16.setValidator (QIntValidator (1, 99999))
+        self.lineEdit_16.setMaxLength (8)
+        self.lineEdit_14.setValidator (QIntValidator (1, 99999))
+        self.lineEdit_14.setMaxLength (8)
+        self.lineEdit_19.setValidator (QIntValidator (1, 99999))
+        self.lineEdit_19.setMaxLength (8)
+        self.lineEdit_borrar_emp.setValidator (QIntValidator (1, 99999))
+        self.lineEdit_borrar_emp.setMaxLength (8)
+
+        self.lineEdit_18.setValidator (QIntValidator (1, 99999))
+        self.lineEdit_18.setMaxLength (8)
+
+        self.lineEdit_15.setValidator (QIntValidator (1, 99999))
+        self.lineEdit_15.setMaxLength (8)
+
+        self.lineEdit_43.setValidator(QDoubleValidator (999999, -999999, 8))
+        self.lineEdit_43.setMaxLength (12)
+
+
+
+
+    def manual (self):
+        # manual = Manual ()
+        # mainwindow.close ()
+        print ("asdasd")
+        manual.showMaximized ()
+        # manual.showMaximized ()
 
     def verVentas (self):
         ventas.showMaximized ()
@@ -178,7 +207,8 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
                 "SELECT precio FROM db_auto where id_auto=(?) and EXISTS (SELECT * FROM db_auto WHERE id_auto=(?))",
                 (idAuto, idAuto))
             valores = cursor.fetchone ()
-            mA = float (valores[0]) - pie  # deuda
+            print (valores[0].strip ("$"))
+            mA = float (valores[0].strip ("$")) - pie  # deuda
             i = float (self.spinBox_4.text ()) / 100  # tia
             periodo = self.comboBox_3.currentText ()
             n = int (periodo) / 12  # anual
@@ -187,7 +217,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_5.setText ("Pago mensual: $ %.2f" % float (pagoMensual))
             pagoTotal = pie + (pagoMensual * n)
             self.label_7.setText ("Pago total: $ %.2f" % pagoTotal)
-            costoFinanciero = pagoTotal - float (valores[0])
+            costoFinanciero = pagoTotal - float (valores[0].strip ("$"))
             self.label_8.setText ("Costo financiamiento: $ %.2f" % costoFinanciero)
             self.spinBox.setDisabled (True)
             self.spinBox_2.setDisabled (True)
@@ -219,6 +249,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_4.setText ("Tasa Interés Anual: 0%%")
 
     def agregarPIE (self):
+        print ("asdasdasd")
         pie = self.lineEdit_29.text ()
         try:
             self.label_6.setText ("PIE: $ %.2f" % float (pie))
@@ -229,7 +260,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
                 "SELECT precio FROM db_auto where id_auto=(?) and EXISTS (SELECT * FROM db_auto WHERE id_auto=(?))",
                 (idAuto, idAuto))
             valores = cursor.fetchone ()
-            self.label_3.setText ("Deuda: $ %.2f" % (float (valores[0]) - float (pie)))
+            self.label_3.setText ("Deuda: $ %.2f" % (float (valores[0].strip ("$")) - float (pie)))
         except ValueError:
             self.label_6.setText ("PIE: $ 0")
         except TypeError:
@@ -305,7 +336,7 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         try:
             self.label_62.setText ("Marca: %s \nModelo: %s \nCondicion: %s" % (
                 valores[0], valores[1], valores[3]))
-            self.label.setText ("Precio: $ %.2f" % float (valores[2]))
+            self.label.setText ("Precio: $ %.2f" % float (valores[2].strip ("$")))
         except TypeError:
             self.label_62.setText ("Marca: -- \nModelo: -- \nPrecio: -- \nCondicion: --")
             self.label.setText ("Precio: $ %.2f" % float (0))
@@ -366,42 +397,46 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         # self.comboBox_4.setCurrentIndex(0)
         marca = self.comboBox.currentText ()
 
-        modelosABARTH = ['500C', '500', '124 Spider']
-        modelosALFAROMEO = ['Giulietta', 'MiTo', '4C', 'Giulia', 'Stelvio']
-        modelosBENTLEY = ['Continental GT', 'Mulsanne', 'Flying Spur', 'Continental GTC', 'Bentayga']
-        modelosBMW = ['Serie 3', 'Serie 5', 'Serie 4', 'Serie 7', 'Z4', 'X5', 'Serie 1', 'X3', 'Serie 6', 'X1', 'X6',
+        modelosABARTH = ['', '500C', '500', '124 Spider']
+        modelosALFAROMEO = ['', 'Giulietta', 'MiTo', '4C', 'Giulia', 'Stelvio']
+        modelosBENTLEY = ['', 'Continental GT', 'Mulsanne', 'Flying Spur', 'Continental GTC', 'Bentayga']
+        modelosBMW = ['', 'Serie 3', 'Serie 5', 'Serie 4', 'Serie 7', 'Z4', 'X5', 'Serie 1', 'X3', 'Serie 6', 'X1',
+                      'X6',
                       'I3', 'Serie 2', 'X4', 'I8', 'Serie 2 Gran Tourer', 'Serie 2 Active Tourer', 'X2']
         modelosAudi = ['', 'A4', 'A8', 'A3', 'TT', 'A5', 'A4', 'Allroad', 'Quattro', 'A6', 'A7', 'Q3', 'Q5', 'S5', 'A1',
                        'A6', 'Allroad', 'Quattro', 'S7', 'S6', 'S8', 'RS4', 'RS5', 'R8', 'SQ5', 'Q7', 'RS6', 'RS7',
                        'RS', 'Q3', 'S3', 'S1', 'TTS', 'S4', 'RS3', 'SQ7', 'Q2', 'TTS', 'SQ7', 'S4', "S6", "S7"]
         modelosAstonMartin = ['', 'DB9', 'Vantage V8', 'Vanquish,', 'Vantage V12', 'Rapide']
-        modelosBYD = ['E6']
-        modelosCHEVROLET = ['Cruze', 'Aveo', 'Trax', 'Orlando', 'Spark', 'Camaro']
-        modelosCITROEN = ['C4', 'C3', 'C5', 'C3 Picasso', 'C4 Picasso', 'Grand C4 Picasso', 'C4 Aircross', 'Nemo',
+        modelosBYD = ['', 'E6']
+        modelosCHEVROLET = ['', 'Cruze', 'Aveo', 'Trax', 'Orlando', 'Spark', 'Camaro']
+        modelosCITROEN = ['', 'C4', 'C3', 'C5', 'C3 Picasso', 'C4 Picasso', 'Grand C4 Picasso', 'C4 Aircross', 'Nemo',
                           'Berlingo', 'C - Elysée', 'C4 Cactus', 'C1', 'C - Zero', 'C - Elysée', 'Spacetourer',
                           'E - Mehari', 'C3 Aircross']
-        modeloDACIA = ['Logan', 'Lodgy', 'Sandero', 'Duster', 'Dokker']
-        modeloDFSK = ['Serie V', 'Serie K']
-        modeloDS = ['DS 4', 'DS 5', 'DS 3', 'DS 4 Crossback', 'DS 7 Crossback']
-        modeloFERRARI = ['488', 'GTC4', 'California', 'F12', 'Portofino', '812']
-        modeloFIAT = ['Freemont', 'Doblò', 'Punto', 'Panda', '500', '500L', '500L', '500X', 'Qubo', 'Fiorino', 'Bravo',
+        modeloDACIA = ['', 'Logan', 'Lodgy', 'Sandero', 'Duster', 'Dokker']
+        modeloDFSK = ['', 'Serie V', 'Serie K']
+        modeloDS = ['', 'DS 4', 'DS 5', 'DS 3', 'DS 4 Crossback', 'DS 7 Crossback']
+        modeloFERRARI = ['', '488', 'GTC4', 'California', 'F12', 'Portofino', '812']
+        modeloFIAT = ['', 'Freemont', 'Doblò', 'Punto', 'Panda', '500', '500L', '500L', '500X', 'Qubo', 'Fiorino',
+                      'Bravo',
                       'Doblò', 'Doblò', '500C', 'Tipo', '124 Spider']
-        modeloFORD = ['C - Max', 'Fiesta', 'Focus', 'Mondeo', 'Ka', 'S - MAX', 'B - MAX', 'Grand C - Max',
+        modeloFORD = ['', 'C - Max', 'Fiesta', 'Focus', 'Mondeo', 'Ka', 'S - MAX', 'B - MAX', 'Grand C - Max',
                       'Tourneo Custom', 'Kuga', 'Galaxy', 'Grand Tourneo Connect', 'Tourneo Connect', 'EcoSport',
                       'Tourneo Courier', 'Mustang', 'Transit Connect', 'Edge', 'Ka+']
-        modeloHONDA = ['Accord', 'Jazz', 'Civic', 'CR-V', 'HR-V']
-        modeloHYUNDAI = ['I20', 'Ix35', 'Ix20', 'I10', 'Santa Fe', 'Veloster', 'I40', 'Elantra', 'I30',
+        modeloHONDA = ['', 'Accord', 'Jazz', 'Civic', 'CR-V', 'HR-V']
+        modeloHYUNDAI = ['', 'I20', 'Ix35', 'Ix20', 'I10', 'Santa Fe', 'Veloster', 'I40', 'Elantra', 'I30',
                          'Grand Santa Fe', 'Genesis', 'H-1 Travel', 'Tucson', 'I20 Active', 'IONIQ', 'Kona']
-        modeloINFINITI = ['Q70', 'Q50', 'QX70', 'QX50', 'Q60', 'Q30', 'QX30']
-        modeloISUZU = ['D-Max']
-        modeloJAGUAR = ['XF', 'Serie XK', 'F-Type', 'XJ', 'XE', 'F-Pace', 'E-Pace']
-        modeloKIA = ['Picanto', 'Rio', 'Sportage', 'Venga', 'Optima', 'Ceed', 'Ceed Sportswagon''Carens', 'Pro_ceed',
+        modeloINFINITI = ['', 'Q70', 'Q50', 'QX70', 'QX50', 'Q60', 'Q30', 'QX30']
+        modeloISUZU = ['', 'D-Max']
+        modeloJAGUAR = ['', 'XF', 'Serie XK', 'F-Type', 'XJ', 'XE', 'F-Pace', 'E-Pace']
+        modeloKIA = ['', 'Picanto', 'Rio', 'Sportage', 'Venga', 'Optima', 'Ceed', 'Ceed Sportswagon''Carens',
+                     'Pro_ceed',
                      'Sorento', 'Soul', 'Niro', 'Soul EV', 'Pro_ceed GT', 'Stonic', 'Optima SW', 'Optima PHEV',
                      'Optima HÃ¯Brido Enchufable', 'Optima SW GT', 'Optima GT', 'Niro HÃ¯Brido Enchufable',
                      'Optima SW HÃ¯Brido Enchufable', 'Stinger']
-        modeloLAMBORGHINI = ['Aventador', 'Huracán']
-        modeloMASERATI = ['GranCabrio', 'Quattroporte', 'Ghibli', 'GranTurismo', 'Levante']
-        modeloMERCEDES = ['Clase SL', 'Clase SLK', 'Clase V', 'Clase C', 'Clase M', 'Clase G', 'Clase E', 'Clase CL',
+        modeloLAMBORGHINI = ['', 'Aventador', 'Huracán']
+        modeloMASERATI = ['', 'GranCabrio', 'Quattroporte', 'Ghibli', 'GranTurismo', 'Levante']
+        modeloMERCEDES = ['', 'Clase SL', 'Clase SLK', 'Clase V', 'Clase C', 'Clase M', 'Clase G', 'Clase E',
+                          'Clase CL',
                           'Clase S', 'Clase GLK', 'SLS AMG', 'Clase B', 'Clase A', 'Clase GL', 'Clase CLS', 'Clase CLA',
                           'Clase GLA', 'AMG GT', 'Vito', 'Clase GLE Coupé', 'Clase GLE', 'Clase GLE Coupé', 'Clase GLK',
                           'Clase GLC', 'Citan', 'Clase GLS', 'Clase SLC', 'GLC Coupé', 'Mercedes-AMG GT', 'CLS']
@@ -442,7 +477,6 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         elif marca == 'DS':
             self.comboBox_4.clear ()
             self.comboBox_4.addItems (modeloDS)
-
         elif marca == 'FERRARI':
             self.comboBox_4.clear ()
             self.comboBox_4.addItems (modeloFERRARI)
@@ -455,7 +489,6 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         elif marca == 'HONDA':
             self.comboBox_4.clear ()
             self.comboBox_4.addItems (modeloHONDA)
-
         elif marca == 'HYUNDAI':
             self.comboBox_4.clear ()
             self.comboBox_4.addItems (modeloHYUNDAI)
@@ -465,7 +498,6 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         elif marca == 'ISUZU':
             self.comboBox_4.clear ()
             self.comboBox_4.addItems (modeloISUZU)
-
         elif marca == 'JAGUAR':
             self.comboBox_4.clear ()
             self.comboBox_4.addItems (modeloJAGUAR)
@@ -475,7 +507,6 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         elif marca == 'LAMBORGHINI':
             self.comboBox_4.clear ()
             self.comboBox_4.addItems (modeloLAMBORGHINI)
-
         elif marca == 'MASERATI':
             self.comboBox_4.clear ()
             self.comboBox_4.addItems (modeloMASERATI)
@@ -495,8 +526,8 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
         marca = self.comboBox.currentText ()
         modelo = self.comboBox_4.currentText ()
         precio = self.lineEdit_41.text ()
-        print(precio)
-        print (type(precio))
+        print (precio)
+        print (type (precio))
         condicion = self.comboBox_2.currentText ()
         datoAuto = [idAut, marca, modelo, precio, condicion]
         if marca.strip () == '' or modelo.strip () == '' or precio.strip () == '':
@@ -535,7 +566,14 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
             print ("dato", dato)
             self.label_59.setText (dato[0][1])  # marca
             self.label_60.setText (dato[0][2])  # modelo
-            self.lineEdit_43.setText (dato[0][3])  # precio
+            #"$%.2f" % float
+            #self.lineEdit_43.setText (str(float(dato[0][3].strip('$','.00'))))  # precio
+            print(dato[0][3])
+            print (float(dato[0][3].strip("$")))
+            print (int(float (dato[0][3].strip ("$"))))
+
+            self.lineEdit_43.setText (str(float (dato[0][3].strip ("$"))))
+
             self.label_61.setText (dato[0][4])  # condicion
             self.pushButton_16.setEnabled (True)
             if self.lineEdit_43.text ().strip () == '':
@@ -779,6 +817,20 @@ class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
             pass
 
 
+class Manual (QtWidgets.QWidget, Ui_Form):
+    def __init__ (self, *args):
+        QtWidgets.QMainWindow.__init__ (self, *args)
+        self.setupUi (self)
+        print ("clase MANUAL")
+
+
+# class MainWindow (QtWidgets.QMainWindow, Ui_MainWindow):
+#    def __init__ (self, *args):
+#        QtWidgets.QMainWindow.__init__ (self, *args)
+#        self.setupUi (self)
+#        self.actualizarEmpleado ()
+
+
 app = QApplication ([])
 ###BASE DE DATOS###
 conn = conexion ()
@@ -787,7 +839,7 @@ db_auto (conn)
 db_cliente (conn)
 db_empleado (conn)
 ###BASE DE DATOS###FIN
-
+manual = Manual ()
 mainwindow = MainWindow ()
 ventas = VerVentas ()
 mainwindow.showMaximized ()

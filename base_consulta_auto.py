@@ -12,8 +12,6 @@ def insertar_base_auto(conn,d):
     except ValueError:
         print("asd")
 
-        alerta.show()
-
 def borrar_base_auto(conn,idBorrar):
     if idBorrar != '':
         cursor = conn.cursor()
@@ -42,7 +40,7 @@ def Buscar_auto(conn,idBuscarAuto):
     return autos
 
 def modificar_auto(conn,dato,idmod):   #el idmod es lo nuevo modificado
-    actualizaPrecio=[dato[1],idmod]
+    actualizaPrecio=["$%.2f"%float(dato[1]),idmod]
     cursor=conn.cursor()
     cursor.execute("UPDATE db_auto SET precio=(?) WHERE id_auto=(?);", actualizaPrecio)
     conn.commit()
