@@ -1,0 +1,24 @@
+<RCC>
+  <qresource prefix="ruta">
+    <file>parte1.png</file>
+    <file>parte2.png</file>
+    <file>parte3.png</file>
+    <file>parte4.png</file>
+    <file>parte5.png</file>
+    <file>parte6.png</file>
+    <file>parte7.png</file>
+    <file>parte8.png</file>
+    <file>parte9.png</file>
+    <file>parte10.png</file>
+    <file>parte11.png</file>
+    <file>parte12.png</file>
+    <file>parte13.png</file>
+    <file>parte14.png</file>
+    <file>parte15.png</file>
+    <file>parte150.png</file>
+    <file>parte151.png</file>
+    <file>parte152.png</file>
+    <file>parte153.png</file>
+    <file>parte154.png</file>
+  </qresource>
+</RCC>

@@ -81,125 +81,26 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-2009</y>
+        <y>0</y>
         <width>969</width>
-        <height>2504</height>
+        <height>2510</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="6" column="0">
-        <widget class="QWidget" name="widget" native="true">
+       <item row="1" column="1">
+        <widget class="QLabel" name="label_10">
          <property name="minimumSize">
           <size>
-           <width>80</width>
-           <height>250</height>
+           <width>0</width>
+           <height>35</height>
           </size>
          </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>246</height>
-          </size>
+         <property name="text">
+          <string>Autos</string>
          </property>
-         <widget class="QLabel" name="label_57">
-          <property name="geometry">
-           <rect>
-            <x>176</x>
-            <y>177</y>
-            <width>336</width>
-            <height>17</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Poner pago inicia, tasa de interes anual y periodo.</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_55">
-          <property name="geometry">
-           <rect>
-            <x>176</x>
-            <y>9</y>
-            <width>133</width>
-            <height>17</height>
-           </rect>
-          </property>
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Sistema de ventas.</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_58">
-          <property name="geometry">
-           <rect>
-            <x>176</x>
-            <y>200</y>
-            <width>526</width>
-            <height>17</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Apretar botón CALCULAR, si todo es correcto se habilitara el botón REGISTRO</string>
-          </property>
-         </widget>
-         <widget class="QGraphicsView" name="graphicsView_11">
-          <property name="geometry">
-           <rect>
-            <x>176</x>
-            <y>55</y>
-            <width>738</width>
-            <height>116</height>
-           </rect>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>738</width>
-            <height>134</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-image: url(:/ruta/parte150.png);</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_56">
-          <property name="geometry">
-           <rect>
-            <x>176</x>
-            <y>32</y>
-            <width>544</width>
-            <height>17</height>
-           </rect>
-          </property>
-          <property name="font">
-           <font>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Elegir valores de ID del auto, empleado y cliente que serán extraidas de las listas</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_59">
-          <property name="geometry">
-           <rect>
-            <x>176</x>
-            <y>223</y>
-            <width>233</width>
-            <height>17</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Para deshacer ir al botón deshacer</string>
-          </property>
-         </widget>
         </widget>
        </item>
-       <item row="5" column="0">
+       <item row="6" column="1">
         <widget class="QTabWidget" name="tabWidget_3">
          <property name="minimumSize">
           <size>
@@ -455,460 +356,7 @@
          </widget>
         </widget>
        </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_22">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>35</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Clientes</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0">
-        <widget class="Line" name="line">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_21">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>35</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Empleados</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="0">
-        <widget class="QWidget" name="widget_2" native="true">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>504</height>
-          </size>
-         </property>
-         <widget class="QWidget" name="layoutWidget">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>10</y>
-            <width>848</width>
-            <height>472</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_2">
-             <item>
-              <widget class="QLabel" name="label_61">
-               <property name="text">
-                <string>Hacer clic en el botón CALCULAR el programa calcula según los datos suministrados el</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_62">
-               <property name="text">
-                <string>el pago mensual, pago total y el costo de financiamiento</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="verticalSpacer">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>40</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <widget class="QGraphicsView" name="graphicsView_12">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>470</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-image: url(:/ruta/parte152.png);</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QTabWidget" name="tabWidget">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>400</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>367</height>
-          </size>
-         </property>
-         <property name="currentIndex">
-          <number>2</number>
-         </property>
-         <widget class="QWidget" name="tab">
-          <attribute name="title">
-           <string>AGREGAR</string>
-          </attribute>
-          <widget class="QLabel" name="label_30">
-           <property name="geometry">
-            <rect>
-             <x>260</x>
-             <y>260</y>
-             <width>274</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>&lt;---- Agregar el auto a la lista de autos(5)</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_29">
-           <property name="geometry">
-            <rect>
-             <x>260</x>
-             <y>290</y>
-             <width>271</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>&lt;---- Muestra todos los autos ingresados</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_26">
-           <property name="geometry">
-            <rect>
-             <x>260</x>
-             <y>165</y>
-             <width>229</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>&lt;---- Ingresar el precio del auto (3)</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_24">
-           <property name="geometry">
-            <rect>
-             <x>260</x>
-             <y>105</y>
-             <width>362</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>&lt;---- Elegis de la lista desplegable la marca de auto (1)</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_25">
-           <property name="geometry">
-            <rect>
-             <x>260</x>
-             <y>135</y>
-             <width>373</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>&lt;---- Elegis de la lista desplegable el modelo de auto (2)</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_23">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>25</y>
-             <width>519</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Agregar autos: Para poder guardar empleados siga los siguientes pasos</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_28">
-           <property name="geometry">
-            <rect>
-             <x>260</x>
-             <y>229</y>
-             <width>390</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>&lt;---- Filtra resultados mostrados en la tabla de empleados</string>
-           </property>
-          </widget>
-          <widget class="QGraphicsView" name="graphicsView_5">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>55</y>
-             <width>261</width>
-             <height>271</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-image: url(:/ruta/parte8.png);</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_27">
-           <property name="geometry">
-            <rect>
-             <x>260</x>
-             <y>198</y>
-             <width>339</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>&lt;---- Elegir la condiciond del auto Nuevo/Usado (4)</string>
-           </property>
-          </widget>
-          <zorder>label_23</zorder>
-          <zorder>graphicsView_5</zorder>
-          <zorder>label_27</zorder>
-          <zorder>label_24</zorder>
-          <zorder>label_25</zorder>
-          <zorder>label_26</zorder>
-          <zorder>label_28</zorder>
-          <zorder>label_30</zorder>
-          <zorder>label_29</zorder>
-         </widget>
-         <widget class="QWidget" name="tab_2">
-          <attribute name="title">
-           <string>BORRAR</string>
-          </attribute>
-          <widget class="QLabel" name="label_32">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>300</y>
-             <width>509</width>
-             <height>43</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Haga clic en el botón BORRAR</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_33">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>252</y>
-             <width>509</width>
-             <height>42</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Coloque el número del ID del auto a borrar</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_31">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>42</y>
-             <width>509</width>
-             <height>43</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Borrar auto: Para poder borrar auto siga los siguientes pasos</string>
-           </property>
-          </widget>
-          <widget class="QGraphicsView" name="graphicsView_6">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>91</y>
-             <width>509</width>
-             <height>155</height>
-            </rect>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>707</width>
-             <height>155</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-image: url(:/ruta/parte10.png);</string>
-           </property>
-          </widget>
-         </widget>
-         <widget class="QWidget" name="tab_3">
-          <attribute name="title">
-           <string>MODIFICAR</string>
-          </attribute>
-          <widget class="QLabel" name="label_41">
-           <property name="geometry">
-            <rect>
-             <x>280</x>
-             <y>300</y>
-             <width>557</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>&lt;--- Buscado el ID de habilitará el botón para poder modificar los datos del auto (4)</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_35">
-           <property name="geometry">
-            <rect>
-             <x>280</x>
-             <y>140</y>
-             <width>290</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>&lt;--- Colocar ID del auto auto a modificar (1)</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_37">
-           <property name="geometry">
-            <rect>
-             <x>230</x>
-             <y>200</y>
-             <width>270</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>&lt;--------------- Se cargará la marca del auto</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_40">
-           <property name="geometry">
-            <rect>
-             <x>230</x>
-             <y>273</y>
-             <width>293</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>&lt;--------------- Se cargará la condición del auto</string>
-           </property>
-          </widget>
-          <widget class="QGraphicsView" name="graphicsView_7">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>90</y>
-             <width>261</width>
-             <height>241</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-image: url(:/ruta/parte11.png);</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_38">
-           <property name="geometry">
-            <rect>
-             <x>230</x>
-             <y>224</y>
-             <width>281</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>&lt;--------------- Se cargará el modelo del auto</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_39">
-           <property name="geometry">
-            <rect>
-             <x>280</x>
-             <y>246</y>
-             <width>220</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>&lt;--- Colocar el precio del auto (3)</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_34">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>60</y>
-             <width>518</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Modificar Empleados: Para poder borrar empleados siga los siguientes pasos</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_36">
-           <property name="geometry">
-            <rect>
-             <x>280</x>
-             <y>170</y>
-             <width>290</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>&lt;--- Colocar ID del auto auto a modificar (2)</string>
-           </property>
-          </widget>
-         </widget>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_10">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>35</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Autos</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
+       <item row="4" column="1">
         <widget class="QTabWidget" name="tabWidget_2">
          <property name="minimumSize">
           <size>
@@ -1295,7 +743,598 @@
          </widget>
         </widget>
        </item>
-       <item row="10" column="0">
+       <item row="2" column="1">
+        <widget class="QTabWidget" name="tabWidget">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>400</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>367</height>
+          </size>
+         </property>
+         <property name="currentIndex">
+          <number>2</number>
+         </property>
+         <widget class="QWidget" name="tab">
+          <attribute name="title">
+           <string>AGREGAR</string>
+          </attribute>
+          <widget class="QLabel" name="label_30">
+           <property name="geometry">
+            <rect>
+             <x>260</x>
+             <y>260</y>
+             <width>274</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>&lt;---- Agregar el auto a la lista de autos(5)</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_29">
+           <property name="geometry">
+            <rect>
+             <x>260</x>
+             <y>290</y>
+             <width>271</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>&lt;---- Muestra todos los autos ingresados</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_26">
+           <property name="geometry">
+            <rect>
+             <x>260</x>
+             <y>165</y>
+             <width>229</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>&lt;---- Ingresar el precio del auto (3)</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_24">
+           <property name="geometry">
+            <rect>
+             <x>260</x>
+             <y>105</y>
+             <width>362</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>&lt;---- Elegis de la lista desplegable la marca de auto (1)</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_25">
+           <property name="geometry">
+            <rect>
+             <x>260</x>
+             <y>135</y>
+             <width>373</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>&lt;---- Elegis de la lista desplegable el modelo de auto (2)</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_23">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>25</y>
+             <width>519</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Agregar autos: Para poder guardar empleados siga los siguientes pasos</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_28">
+           <property name="geometry">
+            <rect>
+             <x>260</x>
+             <y>229</y>
+             <width>390</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>&lt;---- Filtra resultados mostrados en la tabla de empleados</string>
+           </property>
+          </widget>
+          <widget class="QGraphicsView" name="graphicsView_5">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>55</y>
+             <width>261</width>
+             <height>271</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-image: url(:/ruta/parte8.png);</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_27">
+           <property name="geometry">
+            <rect>
+             <x>260</x>
+             <y>198</y>
+             <width>339</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>&lt;---- Elegir la condiciond del auto Nuevo/Usado (4)</string>
+           </property>
+          </widget>
+          <zorder>label_23</zorder>
+          <zorder>graphicsView_5</zorder>
+          <zorder>label_27</zorder>
+          <zorder>label_24</zorder>
+          <zorder>label_25</zorder>
+          <zorder>label_26</zorder>
+          <zorder>label_28</zorder>
+          <zorder>label_30</zorder>
+          <zorder>label_29</zorder>
+         </widget>
+         <widget class="QWidget" name="tab_2">
+          <attribute name="title">
+           <string>BORRAR</string>
+          </attribute>
+          <widget class="QLabel" name="label_32">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>300</y>
+             <width>509</width>
+             <height>43</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Haga clic en el botón BORRAR</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_33">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>252</y>
+             <width>509</width>
+             <height>42</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Coloque el número del ID del auto a borrar</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_31">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>42</y>
+             <width>509</width>
+             <height>43</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Borrar auto: Para poder borrar auto siga los siguientes pasos</string>
+           </property>
+          </widget>
+          <widget class="QGraphicsView" name="graphicsView_6">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>91</y>
+             <width>509</width>
+             <height>155</height>
+            </rect>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>707</width>
+             <height>155</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-image: url(:/ruta/parte10.png);</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="tab_3">
+          <attribute name="title">
+           <string>MODIFICAR</string>
+          </attribute>
+          <widget class="QLabel" name="label_41">
+           <property name="geometry">
+            <rect>
+             <x>280</x>
+             <y>300</y>
+             <width>557</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>&lt;--- Buscado el ID de habilitará el botón para poder modificar los datos del auto (4)</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_35">
+           <property name="geometry">
+            <rect>
+             <x>280</x>
+             <y>140</y>
+             <width>290</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>&lt;--- Colocar ID del auto auto a modificar (1)</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_37">
+           <property name="geometry">
+            <rect>
+             <x>230</x>
+             <y>200</y>
+             <width>270</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>&lt;--------------- Se cargará la marca del auto</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_40">
+           <property name="geometry">
+            <rect>
+             <x>230</x>
+             <y>273</y>
+             <width>293</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>&lt;--------------- Se cargará la condición del auto</string>
+           </property>
+          </widget>
+          <widget class="QGraphicsView" name="graphicsView_7">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>90</y>
+             <width>261</width>
+             <height>241</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-image: url(:/ruta/parte11.png);</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_38">
+           <property name="geometry">
+            <rect>
+             <x>230</x>
+             <y>224</y>
+             <width>281</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>&lt;--------------- Se cargará el modelo del auto</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_39">
+           <property name="geometry">
+            <rect>
+             <x>280</x>
+             <y>246</y>
+             <width>220</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>&lt;--- Colocar el precio del auto (3)</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_34">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>60</y>
+             <width>518</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Modificar Empleados: Para poder borrar empleados siga los siguientes pasos</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_36">
+           <property name="geometry">
+            <rect>
+             <x>280</x>
+             <y>170</y>
+             <width>290</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>&lt;--- Colocar ID del auto auto a modificar (2)</string>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLabel" name="label_22">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Clientes</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <widget class="QWidget" name="widget_2" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>504</height>
+          </size>
+         </property>
+         <widget class="QWidget" name="layoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>848</width>
+            <height>472</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <spacer name="verticalSpacer_4">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_61">
+               <property name="text">
+                <string>Hacer clic en el botón CALCULAR el programa calcula según los datos suministrados el</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_62">
+               <property name="text">
+                <string>el pago mensual, pago total y el costo de financiamiento</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QGraphicsView" name="graphicsView_12">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>470</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-image: url(:/ruta/parte152.png);</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="label_21">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Empleados</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="7" column="1">
+        <widget class="QWidget" name="widget" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>250</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>246</height>
+          </size>
+         </property>
+         <widget class="QLabel" name="label_57">
+          <property name="geometry">
+           <rect>
+            <x>176</x>
+            <y>177</y>
+            <width>336</width>
+            <height>17</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Poner pago inicia, tasa de interes anual y periodo.</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_55">
+          <property name="geometry">
+           <rect>
+            <x>176</x>
+            <y>9</y>
+            <width>133</width>
+            <height>17</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Sistema de ventas.</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_58">
+          <property name="geometry">
+           <rect>
+            <x>176</x>
+            <y>200</y>
+            <width>526</width>
+            <height>17</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Apretar botón CALCULAR, si todo es correcto se habilitara el botón REGISTRO</string>
+          </property>
+         </widget>
+         <widget class="QGraphicsView" name="graphicsView_11">
+          <property name="geometry">
+           <rect>
+            <x>176</x>
+            <y>55</y>
+            <width>738</width>
+            <height>116</height>
+           </rect>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>738</width>
+            <height>134</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-image: url(:/ruta/parte150.png);</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_56">
+          <property name="geometry">
+           <rect>
+            <x>176</x>
+            <y>32</y>
+            <width>544</width>
+            <height>17</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Elegir valores de ID del auto, empleado y cliente que serán extraidas de las listas</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_59">
+          <property name="geometry">
+           <rect>
+            <x>176</x>
+            <y>223</y>
+            <width>233</width>
+            <height>17</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Para deshacer ir al botón deshacer</string>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="11" column="1">
         <widget class="QWidget" name="widget_3" native="true">
          <property name="minimumSize">
           <size>
@@ -1321,6 +1360,19 @@
             </item>
             <item row="0" column="1">
              <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <spacer name="verticalSpacer_5">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
               <item>
                <widget class="QLabel" name="label_63">
                 <property name="text">
@@ -1365,8 +1417,34 @@
             </property>
            </widget>
           </item>
+          <item>
+           <spacer name="verticalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
          </layout>
         </widget>
+       </item>
+       <item row="0" column="1">
+        <spacer name="verticalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
       <zorder>tabWidget_2</zorder>
@@ -1379,6 +1457,9 @@
       <zorder>line</zorder>
       <zorder>widget_2</zorder>
       <zorder>widget_3</zorder>
+      <zorder>horizontalSpacer</zorder>
+      <zorder>horizontalSpacer_2</zorder>
+      <zorder>verticalSpacer_6</zorder>
      </widget>
     </widget>
    </item>
